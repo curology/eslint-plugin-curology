@@ -43,18 +43,6 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* `import-screaming-snake-case`: allows you to specify globs in your config,
+* [`import-screaming-snake-case`](docs/rules/import-screaming-snake-case.md): allows you to specify globs in your config,
   if an import file should be using screaming snakecase (used for
-importing constant files). Example of config:
-```json
-{
-    "rules": {
-        "curology/import-screaming-snake-case": [2, ["jsx/constants/**"]]
-    }
-}
-```
-
-
-
-
-
+importing constant files).
