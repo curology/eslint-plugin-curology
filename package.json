@@ -1,13 +1,28 @@
 {
   "name": "eslint-plugin-curology",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Custom ESlint rules for Curology",
+  "author": "Curology <engineering@curology.com>",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "import",
+    "modules",
+    "es6"
   ],
-  "author": "Curology",
+  "bugs": {
+    "url": "https://github.com/PocketDerm/eslint-plugin-curology/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PocketDerm/eslint-plugin-curology.git"
+  },
+  "homepage": "https://github.com/PocketDerm/eslint-plugin-curology",
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
@@ -18,9 +33,5 @@
   "devDependencies": {
     "eslint": "~3.9.1",
     "mocha": "^3.1.2"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "license": "ISC"
+  }
 }
