@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-curology",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom ESlint rules for Curology",
   "author": "Curology <engineering@curology.com>",
   "keywords": [
