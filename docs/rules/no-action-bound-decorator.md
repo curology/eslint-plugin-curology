@@ -1,5 +1,4 @@
-# Prefer arrow function over action.bound decorator
-(no-action-bound-decorator)
+# Prefer arrow function over action.bound decorator (no-action-bound-decorator)
 
 We prefer using arrow function to bind `this` instead of MobX&#39;s @action.bound decorator (no-action-bound-decorator)
 
