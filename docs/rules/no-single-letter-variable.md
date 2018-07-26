@@ -1,36 +1,36 @@
 # Do not allow single letter variable names (no-single-letter-variable)
 
-Please describe the origin of the rule here.
+As a team, we prefer more descriptive argument names (i.e. `event` over
+`e`)
 
 
 ## Rule Details
-
-This rule aims to...
 
 Examples of **incorrect** code for this rule:
 
 ```js
 
-// fill me in
+const a = 'hello';
+import a from 'test';
 
+e => e.preventDefault();
 ```
 
 Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+const hello = 'world';
+import Test from 'test';
+
+event => event.preventDefault();
 
 ```
 
-### Options
-
-If there are any options, describe them here. Otherwise, delete this section.
-
 ## When Not To Use It
 
-Give a short description of when it would be appropriate to turn off this rule.
+If you're using an iterator and need to have a variable, it would be
+appropriate to use `i` or `j`.
 
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+If you're declaring a comparator function, it would be appropriate to
+use `a` and `b`.
