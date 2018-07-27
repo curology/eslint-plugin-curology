@@ -30,7 +30,7 @@ event => event.preventDefault();
 ## When Not To Use It
 
 If you're using an iterator and need to have a variable, it would be
-appropriate to use `i` or `j`.
+appropriate to use `i` or `j` and disable this rule.
 
 If you're declaring a comparator function, it would be appropriate to
-use `a` and `b`.
+use `a` and `b` and disable this rule.
