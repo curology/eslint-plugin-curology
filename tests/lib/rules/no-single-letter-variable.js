@@ -4,6 +4,10 @@
  */
 "use strict";
 
+const path = require('path');
+
+const NODE_MODULES = '../../../node_modules';
+
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
@@ -13,7 +17,7 @@ var rule = require("../../../lib/rules/no-single-letter-variable"),
   RuleTester = require("eslint").RuleTester;
 
   RuleTester.setDefaultConfig({
-    parser: "babel-eslint",
+    parser: path.join(__dirname, NODE_MODULES, 'babel-eslint'),
     parserOptions: {
       ecmaVersion: 6,
       sourceType: "module"
