@@ -43,7 +43,5 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* [`import-screaming-snake-case`](docs/rules/import-screaming-snake-case.md): allows you to specify globs in your config,
-  if an import file should be using screaming snakecase (used for
+* [`import-screaming-snake-case`](docs/rules/import-screaming-snake-case.md): allows you to specify globs in your config, if an import file should be using screaming snakecase (used for
 importing constant files).
-* [`no-action-bound-decorator`](docs/rules/no-action-bound-decorator.md): prevent usage of `@action.bound` supplied by MobX library.
