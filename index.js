@@ -1,4 +1,8 @@
-module.exports = {
+/**
+ * TODO: If more distinct rulesets are needed, e.g. `plugin:curology/jest`,
+ * `plugin:curology/react`, we can expand on the exported config keys.
+ */
+const recommended = {
   extends: [
     "airbnb",
     "plugin:@typescript-eslint/recommended",
@@ -58,5 +62,11 @@ module.exports = {
   },
   settings: {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+  },
+};
+
+module.exports = {
+  configs: {
+    recommended,
   },
 };
