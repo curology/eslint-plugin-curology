@@ -30,7 +30,6 @@ Add `curology` to the plugins section of your `.eslintrc` configuration file. Yo
 }
 ```
 
-
 Then configure the rules you want to use under the rules section.
 
 ```json
@@ -43,5 +42,4 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-* [`import-screaming-snake-case`](docs/rules/import-screaming-snake-case.md): allows you to specify globs in your config, if an import file should be using screaming snakecase (used for
-importing constant files).
+There are no custom rules at the moment.
