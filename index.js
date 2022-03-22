@@ -1,5 +1,20 @@
 const rules = require("./lib");
 
+const importOrderBaseConfig = {
+  groups: [["builtin", "external"], "internal", ["parent", "sibling"]],
+  "newlines-between": "always",
+  warnOnUnassignedImports: false,
+};
+
+const importOrder = [
+  2,
+  {
+    groups: [["builtin", "external"], "internal", ["parent", "sibling"]],
+    "newlines-between": "always",
+    warnOnUnassignedImports: false,
+  },
+];
+
 /**
  * TODO: If more distinct rulesets are needed, e.g. `plugin:curology/jest`,
  * `plugin:curology/react`, we can expand on the exported config keys.
@@ -24,17 +39,11 @@ const recommended = {
     "function-paren-newline": 0,
     "global-require": 0,
     "id-length": 0,
-    "import/extensions": ["error", "never"],
+    "import/extensions": [2, "never"],
     "import/no-cycle": 1,
     "import/no-named-as-default-member": 1,
     "import/no-unresolved": 0,
-    "import/order": [
-      2,
-      {
-        groups: [["builtin", "external"], "internal", ["parent", "sibling"]],
-        "newlines-between": "always",
-      },
-    ],
+    "import/order": [2, { ...importOrderBaseConfig }],
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": [2, { devDependencies: true }],
     indent: 0,
@@ -51,10 +60,7 @@ const recommended = {
     "no-static-element-interactions": 0,
     "no-underscore-dangle": 1,
     "object-curly-newline": 0,
-    "object-property-newline": [
-      "error",
-      { allowAllPropertiesOnSameLine: true },
-    ],
+    "object-property-newline": [2, { allowAllPropertiesOnSameLine: true }],
     "react/function-component-definition": 0,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "react/jsx-fragments": [2, "element"],
@@ -76,6 +82,7 @@ const recommended = {
 const cypress = {
   ...recommended,
   extends: ["plugin:cypress/recommended", ...recommended.extends],
+  plugins: ["cypress"],
   rules: {
     ...recommended.rules,
     "cypress/no-assigning-return-values": 2,
@@ -85,20 +92,20 @@ const cypress = {
     "cypress/require-data-selectors": 0,
     "cypress/no-force": 1,
     "cypress/no-pause": 2,
-    "@typescript-eslint/ban-ts-ignore": "off",
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/ban-ts-ignore": 0,
+    camelcase: 0,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
     "@typescript-eslint/no-unused-vars": [
-      "warn",
+      1,
       {
         argsIgnorePattern: "^_",
       },
     ],
-    camelcase: "off",
     "import/order": [
-      "error",
+      2,
       {
-        "newlines-between": "always",
+        ...importOrderBaseConfig,
         pathGroups: [
           {
             pattern: "{constants,integration,fixtures}/**",
@@ -109,6 +116,7 @@ const cypress = {
         pathGroupsExcludedImportTypes: [],
       },
     ],
+    "no-console": "off", // `cypress-log-to-output` makes console usage useful for debugging
   },
   env: {
     "cypress/globals": true,
