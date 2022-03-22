@@ -5,6 +5,7 @@
 const recommended = {
   extends: [
     "airbnb",
+    "eslint/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
