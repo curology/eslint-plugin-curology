@@ -5,7 +5,7 @@
 const recommended = {
   extends: [
     "airbnb",
-    "eslint/recommended",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
   ],
@@ -51,10 +51,13 @@ const recommended = {
       "error",
       { allowAllPropertiesOnSameLine: true },
     ],
+    "react/function-component-definition": 0,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "react/jsx-fragments": [2, "element"],
     "react/jsx-key": 2,
+    "react/jsx-no-useless-fragment": 0,
     "react/jsx-one-expression-per-line": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/jsx-wrap-multilines": 0,
     "react/no-array-index-key": 1,
     "react/require-default-props": 2,
