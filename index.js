@@ -73,8 +73,22 @@ const recommended = {
   },
 };
 
+const cypress = {
+  extends: ["plugin:cypress/recommended"],
+  rules: {
+    "cypress/no-assigning-return-values": 2,
+    "cypress/no-unnecessary-waiting": 2,
+    "cypress/no-async-tests": 2,
+    "cypress/assertion-before-screenshot": 2,
+    "cypress/require-data-selectors": 0,
+    "cypress/no-force": 1,
+    "cypress/no-pause": 2,
+  },
+};
+
 module.exports = {
   configs: {
+    cypress,
     recommended,
   },
   rules,
