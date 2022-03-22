@@ -21,7 +21,7 @@ const recommended = {
     "func-names": 0,
     "function-paren-newline": 0,
     "global-require": 0,
-    "id-length": 2,
+    "id-length": 0,
     "import/extensions": ["error", "never"],
     "import/no-cycle": 1,
     "import/no-named-as-default-member": 1,
