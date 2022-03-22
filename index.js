@@ -82,6 +82,7 @@ const recommended = {
 const cypress = {
   ...recommended,
   extends: ["plugin:cypress/recommended", ...recommended.extends],
+  parser: "@typescript-eslint/parser",
   plugins: ["cypress"],
   rules: {
     ...recommended.rules,
