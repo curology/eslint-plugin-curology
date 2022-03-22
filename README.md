@@ -1,45 +1,25 @@
 # eslint-plugin-curology
 
-Custom ESlint rules for Curology
+[Shareable Config](https://eslint.org/docs/developer-guide/shareable-configs) used at [Curology](https://curology.com/).
+
+(Set up as a plugin for any custom rules we want to write in the future.)
 
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):
 
 ```
-$ npm i eslint --save-dev
+$ yarn add eslint eslint-plugin-curology  --dev
 ```
 
-Next, install `eslint-plugin-curology`:
+### Usage (Config)
+
+To enable this configuration use the `extends` property in your `.eslintrc` config file:
 
 ```
-$ npm install eslint-plugin-curology --save-dev
-```
-
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-curology` globally.
-
-## Usage
-
-Add `curology` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
-
-```json
 {
-    "plugins": [
-        "curology"
-    ]
+  "extends": [...otherConfig, "plugin:curology/recommended"]
 }
 ```
 
-Then configure the rules you want to use under the rules section.
-
-```json
-{
-    "rules": {
-        "curology/rule-name": 2
-    }
-}
-```
-
-## Supported Rules
-
-There are no custom rules at the moment.
+`"plugin:curology/recommended"` must be the last entry in "extends" for best [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier/blob/1f206661b8e197e6753b772509028c34f954b42a/README.md#recommended-configuration) compatibility,
