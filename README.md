@@ -1,6 +1,8 @@
 # eslint-plugin-curology
 
-[Shareable Config](https://eslint.org/docs/developer-guide/shareable-configs) used at [Curology](https://curology.com/). Set up as a plugin for any custom rules we want to write in the future.
+[Shareable Config](https://eslint.org/docs/developer-guide/shareable-configs) used at [Curology](https://curology.com/).
+
+(Set up as a plugin for any custom rules we want to write in the future.)
 
 ## Installation
 
@@ -16,8 +18,8 @@ To enable this configuration use the `extends` property in your `.eslintrc` conf
 
 ```
 {
-  "extends": [...otherConfig, "plugin:curology"]
+  "extends": [...otherConfig, "plugin:curology/recommended"]
 }
 ```
 
-`"plugin:curology"` must be the last entry in "extends" for best [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier/blob/1f206661b8e197e6753b772509028c34f954b42a/README.md#recommended-configuration) compatibility,
+`"plugin:curology/recommended"` must be the last entry in "extends" for best [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier/blob/1f206661b8e197e6753b772509028c34f954b42a/README.md#recommended-configuration) compatibility,
