@@ -1,3 +1,5 @@
+const rules = require("./lib");
+
 /**
  * TODO: If more distinct rulesets are needed, e.g. `plugin:curology/jest`,
  * `plugin:curology/react`, we can expand on the exported config keys.
@@ -75,4 +77,5 @@ module.exports = {
   configs: {
     recommended,
   },
+  rules,
 };
