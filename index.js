@@ -15,7 +15,7 @@ const recommended = {
   plugins: ["curology"],
   rules: {
     "@typescript-eslint/prefer-ts-expect-error": 2,
-    "arrow-parens": [2, "as-needed"],
+    "arrow-parens": 0,
     "class-methods-use-this": 0,
     "comma-dangle": [2, "always-multiline"],
     "consistent-return": 0,
@@ -74,8 +74,10 @@ const recommended = {
 };
 
 const cypress = {
-  extends: ["plugin:cypress/recommended"],
+  ...recommended,
+  extends: ["plugin:cypress/recommended", ...recommended.extends],
   rules: {
+    ...recommended.rules,
     "cypress/no-assigning-return-values": 2,
     "cypress/no-unnecessary-waiting": 2,
     "cypress/no-async-tests": 2,
@@ -83,6 +85,33 @@ const cypress = {
     "cypress/require-data-selectors": 0,
     "cypress/no-force": 1,
     "cypress/no-pause": 2,
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        argsIgnorePattern: "^_",
+      },
+    ],
+    camelcase: "off",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        pathGroups: [
+          {
+            pattern: "{constants,integration,fixtures}/**",
+            group: "parent",
+            position: "before",
+          },
+        ],
+        pathGroupsExcludedImportTypes: [],
+      },
+    ],
+  },
+  env: {
+    "cypress/globals": true,
   },
 };
 
