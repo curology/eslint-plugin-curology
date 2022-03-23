@@ -1,4 +1,4 @@
-const importOrderBaseConfig = require("./shared");
+const importOrderBaseConfig = require("../shared");
 
 const cypress = {
   extends: ["plugin:cypress/recommended"],
