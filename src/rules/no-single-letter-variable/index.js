@@ -13,9 +13,9 @@ module.exports = {
     docs: {
       description: "Do not allow single letter variable names",
       category: "Best Practices",
-      recommended: false,
+      recommended: true,
     },
-    fixable: null,
+    fixable: undefined,
     schema: [],
   },
 
@@ -26,10 +26,10 @@ module.exports = {
       }
 
       if (identifierNode.name.length <= 1) {
-        context.report(
-          topNode,
-          "No single letter variables. Be more descriptive."
-        );
+        context.report({
+          node: topNode,
+          message: "No single letter variables. Be more descriptive.",
+        });
       }
     };
 
@@ -39,7 +39,7 @@ module.exports = {
           case "Property":
             identifierCheck(topNode, property.value);
             break;
-          case "ExperimentalRestProperty":
+          case "RestElement":
             identifierCheck(topNode, property.argument);
             break;
           default:

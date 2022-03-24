@@ -5,21 +5,22 @@
 "use strict";
 
 const path = require("path");
+const { RuleTester } = require("eslint");
 
-const NODE_MODULES = "../../../node_modules";
+const noSingleLetterVariableRule = require(".");
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-single-letter-variable"),
-  RuleTester = require("eslint").RuleTester;
+const NODE_MODULES_PATH = "../../../node_modules";
 
-RuleTester.setDefaultConfig({
-  parser: path.join(__dirname, NODE_MODULES, "babel-eslint"),
+const ruleTester = new RuleTester({
+  parser: path.join(__dirname, NODE_MODULES_PATH, "@babel/eslint-parser"),
   parserOptions: {
     ecmaVersion: 6,
     sourceType: "module",
+    requireConfigFile: false,
   },
 });
 
@@ -27,10 +28,9 @@ RuleTester.setDefaultConfig({
 // Tests
 //------------------------------------------------------------------------------
 
-var ERROR_MESSAGE = "No single letter variables. Be more descriptive.";
+const ERROR_MESSAGE = "No single letter variables. Be more descriptive.";
 
-var ruleTester = new RuleTester();
-ruleTester.run("no-single-letter-variable", rule, {
+ruleTester.run("no-single-letter-variable", noSingleLetterVariableRule, {
   valid: [
     "const hello = 'world'",
     "let hello = 'world'",
