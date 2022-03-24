@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint-plugin-curology cypress config serializes to a snapshot 1`] = `
+Object {
+  "env": Object {
+    "cypress/globals": true,
+  },
+  "globals": Object {},
+  "ignorePatterns": Array [],
+  "parserOptions": Object {},
+  "plugins": Array [
+    "cypress",
+  ],
+  "rules": Object {
+    "@typescript-eslint/ban-ts-ignore": Array [
+      0,
+    ],
+    "@typescript-eslint/camelcase": Array [
+      0,
+    ],
+    "@typescript-eslint/explicit-function-return-type": Array [
+      0,
+    ],
+    "@typescript-eslint/no-unused-vars": Array [
+      1,
+      Object {
+        "argsIgnorePattern": "^_",
+      },
+    ],
+    "camelcase": Array [
+      0,
+    ],
+    "cypress/assertion-before-screenshot": Array [
+      2,
+    ],
+    "cypress/no-assigning-return-values": Array [
+      2,
+    ],
+    "cypress/no-async-tests": Array [
+      2,
+    ],
+    "cypress/no-force": Array [
+      1,
+    ],
+    "cypress/no-pause": Array [
+      2,
+    ],
+    "cypress/no-unnecessary-waiting": Array [
+      2,
+    ],
+    "cypress/require-data-selectors": Array [
+      0,
+    ],
+    "import/order": Array [
+      2,
+      Object {
+        "importOrderBaseConfig": Object {
+          "groups": Array [
+            Array [
+              "builtin",
+              "external",
+            ],
+            "internal",
+            Array [
+              "parent",
+              "sibling",
+            ],
+          ],
+          "newlines-between": "always",
+          "warnOnUnassignedImports": false,
+        },
+        "pathGroups": Array [
+          Object {
+            "group": "parent",
+            "pattern": "{constants,integration,fixtures}/**",
+            "position": "before",
+          },
+        ],
+        "pathGroupsExcludedImportTypes": Array [],
+      },
+    ],
+    "no-console": Array [
+      0,
+    ],
+  },
+  "settings": Object {},
+}
+`;

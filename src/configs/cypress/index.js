@@ -36,7 +36,7 @@ const cypress = {
         pathGroupsExcludedImportTypes: [],
       },
     ],
-    "no-console": "off", // `cypress-log-to-output` makes console usage useful for debugging
+    "no-console": 0, // `cypress-log-to-output` makes console usage useful for debugging
   },
   env: {
     "cypress/globals": true,
