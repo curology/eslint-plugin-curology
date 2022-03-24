@@ -17,7 +17,7 @@ const generateTest = (dirname, config) => {
     const eslintConfig = execSync(
       `yarn run eslint --no-eslintrc -c ${setPath(
         "fixture.json"
-      )} --print-config ${setPath("index.ts")}`,
+      )} --print-config ${setPath("index.js")}`,
       {
         encoding: "utf8",
       }

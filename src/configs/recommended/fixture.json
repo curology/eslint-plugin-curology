@@ -1,15 +1,13 @@
-const importOrderBaseConfig = require("./shared");
-
-const recommended = {
-  extends: [
+{
+  "extends": [
     "airbnb",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
-  parser: "@typescript-eslint/parser",
-  plugins: ["curology"],
-  rules: {
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["curology"],
+  "rules": {
     "@typescript-eslint/prefer-ts-expect-error": 2,
     "arrow-parens": 0,
     "class-methods-use-this": 0,
@@ -24,10 +22,17 @@ const recommended = {
     "import/no-cycle": 1,
     "import/no-named-as-default-member": 1,
     "import/no-unresolved": 0,
-    "import/order": [2, { ...importOrderBaseConfig }],
+    "import/order": [
+      2,
+      {
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling"]],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": false
+      }
+    ],
     "import/prefer-default-export": 0,
-    "import/no-extraneous-dependencies": [2, { devDependencies: true }],
-    indent: 0,
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "indent": 0,
     "jsx-a11y/anchor-is-valid": 1,
     "jsx-a11y/click-events-have-key-events": 1,
     "jsx-a11y/img-redundant-alt": 1,
@@ -41,9 +46,9 @@ const recommended = {
     "no-static-element-interactions": 0,
     "no-underscore-dangle": 1,
     "object-curly-newline": 0,
-    "object-property-newline": [2, { allowAllPropertiesOnSameLine: true }],
+    "object-property-newline": [2, { "allowAllPropertiesOnSameLine": true }],
     "react/function-component-definition": 0,
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-fragments": [2, "element"],
     "react/jsx-key": 2,
     "react/jsx-no-useless-fragment": 0,
@@ -53,13 +58,7 @@ const recommended = {
     "react/no-array-index-key": 1,
     "react/require-default-props": 2,
     "react/sort-comp": 0,
-    "space-before-function-paren": 0,
+    "space-before-function-paren": 0
   },
-  settings: {
-    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
-  },
-};
-
-module.exports = {
-  recommended,
-};
+  "settings": { "import/extensions": [".js", ".jsx", ".ts", ".tsx"] }
+}

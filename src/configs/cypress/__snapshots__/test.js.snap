@@ -54,21 +54,18 @@ Object {
     "import/order": Array [
       2,
       Object {
-        "importOrderBaseConfig": Object {
-          "groups": Array [
-            Array [
-              "builtin",
-              "external",
-            ],
-            "internal",
-            Array [
-              "parent",
-              "sibling",
-            ],
+        "groups": Array [
+          Array [
+            "builtin",
+            "external",
           ],
-          "newlines-between": "always",
-          "warnOnUnassignedImports": false,
-        },
+          "internal",
+          Array [
+            "parent",
+            "sibling",
+          ],
+        ],
+        "newlines-between": "always",
         "pathGroups": Array [
           Object {
             "group": "parent",
@@ -77,6 +74,7 @@ Object {
           },
         ],
         "pathGroupsExcludedImportTypes": Array [],
+        "warnOnUnassignedImports": false,
       },
     ],
     "no-console": Array [

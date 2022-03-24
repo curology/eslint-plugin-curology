@@ -18,15 +18,9 @@
     "import/order": [
       2,
       {
-        "importOrderBaseConfig": {
-          "groups": [
-            ["builtin", "external"],
-            "internal",
-            ["parent", "sibling"]
-          ],
-          "newlines-between": "always",
-          "warnOnUnassignedImports": false
-        },
+        "groups": [["builtin", "external"], "internal", ["parent", "sibling"]],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": false,
         "pathGroups": [
           {
             "pattern": "{constants,integration,fixtures}/**",
