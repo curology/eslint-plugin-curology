@@ -2,24 +2,21 @@
  * @fileoverview Do not allow single letter variable names
  * @author Seiji Naganuma
  */
-"use strict";
 
-const path = require("path");
-
-const NODE_MODULES = "../../../node_modules";
+import path from 'path';
+import { RuleTester } from 'eslint';
+import { noSingleLetterVariable } from '.';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/no-single-letter-variable"),
-  RuleTester = require("eslint").RuleTester;
-
-RuleTester.setDefaultConfig({
-  parser: path.join(__dirname, NODE_MODULES, "babel-eslint"),
+const ruleTester = new RuleTester({
+  parser: path.join(__dirname, '../../../node_modules', '@babel/eslint-parser'),
   parserOptions: {
-    ecmaVersion: 6,
-    sourceType: "module",
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    requireConfigFile: false,
   },
 });
 
@@ -27,29 +24,28 @@ RuleTester.setDefaultConfig({
 // Tests
 //------------------------------------------------------------------------------
 
-var ERROR_MESSAGE = "No single letter variables. Be more descriptive.";
+const ERROR_MESSAGE = 'No single letter variables. Be more descriptive.';
 
-var ruleTester = new RuleTester();
-ruleTester.run("no-single-letter-variable", rule, {
+ruleTester.run('no-single-letter-variable', noSingleLetterVariable, {
   valid: [
     "const hello = 'world'",
     "let hello = 'world'",
     "var hello = 'world'",
     "var hello = 'world', something = 'test'",
-    "const { hello } = thing;",
-    "const { hello, ...rest } = thing;",
-    "const { hello: world } = thing;",
+    'const { hello } = thing;',
+    'const { hello, ...rest } = thing;',
+    'const { hello: world } = thing;',
     "import test from 'test';",
     "import { test } from 'test';",
-    "function test (hello) {};",
-    "function test ({ hello }) {};",
-    "function test ({ hello, ...rest }) {};",
-    "test => {};",
-    "({ test }) => {};",
-    "({ hello, ...rest }) => {};",
-    "(test, test1) => {};",
-    "class Test { test = arg1 => {} };",
-    "class Test { test(arg1) {} };",
+    'function test (hello) {};',
+    'function test ({ hello }) {};',
+    'function test ({ hello, ...rest }) {};',
+    'test => {};',
+    '({ test }) => {};',
+    '({ hello, ...rest }) => {};',
+    '(test, test1) => {};',
+    'class Test { test = arg1 => {} };',
+    'class Test { test(arg1) {} };',
   ],
 
   invalid: [
@@ -58,7 +54,7 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
@@ -67,7 +63,7 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
@@ -76,7 +72,7 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
@@ -85,34 +81,34 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
     {
-      code: "const { e } = thing;",
+      code: 'const { e } = thing;',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
     {
-      code: "const { test, ...e } = thing;",
+      code: 'const { test, ...e } = thing;',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
     {
-      code: "const { test: e } = thing;",
+      code: 'const { test: e } = thing;',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
         },
       ],
     },
@@ -121,7 +117,7 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ImportDeclaration",
+          type: 'ImportDeclaration',
         },
       ],
     },
@@ -130,115 +126,115 @@ ruleTester.run("no-single-letter-variable", rule, {
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ImportDeclaration",
+          type: 'ImportDeclaration',
         },
       ],
     },
     {
-      code: "function test (e) {};",
+      code: 'function test (e) {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionDeclaration",
+          type: 'FunctionDeclaration',
         },
       ],
     },
     {
-      code: "function test ({ e }) {};",
+      code: 'function test ({ e }) {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionDeclaration",
+          type: 'FunctionDeclaration',
         },
       ],
     },
     {
-      code: "function test ({ test, ...e }) {};",
+      code: 'function test ({ test, ...e }) {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionDeclaration",
+          type: 'FunctionDeclaration',
         },
       ],
     },
     {
-      code: "const func = function (e) {}",
+      code: 'const func = function (e) {}',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionExpression",
+          type: 'FunctionExpression',
         },
       ],
     },
     {
-      code: "const func = function ({ e }) {}",
+      code: 'const func = function ({ e }) {}',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionExpression",
+          type: 'FunctionExpression',
         },
       ],
     },
     {
-      code: "const func = function ({ hello, ...e }) {}",
+      code: 'const func = function ({ hello, ...e }) {}',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionExpression",
+          type: 'FunctionExpression',
         },
       ],
     },
     {
-      code: "e => {};",
+      code: 'e => {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ArrowFunctionExpression",
+          type: 'ArrowFunctionExpression',
         },
       ],
     },
     {
-      code: "({ e }) => {};",
+      code: '({ e }) => {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ArrowFunctionExpression",
+          type: 'ArrowFunctionExpression',
         },
       ],
     },
     {
-      code: "({ hello, ...e }) => {};",
+      code: '({ hello, ...e }) => {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ArrowFunctionExpression",
+          type: 'ArrowFunctionExpression',
         },
       ],
     },
     {
-      code: "(e, test) => {};",
+      code: '(e, test) => {};',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ArrowFunctionExpression",
+          type: 'ArrowFunctionExpression',
         },
       ],
     },
     {
-      code: "class Test { test = e => {} };",
+      code: 'class Test { test = e => {} };',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "ArrowFunctionExpression",
+          type: 'ArrowFunctionExpression',
         },
       ],
     },
     {
-      code: "class Test { test(e) {} };",
+      code: 'class Test { test(e) {} };',
       errors: [
         {
           message: ERROR_MESSAGE,
-          type: "FunctionExpression",
+          type: 'FunctionExpression',
         },
       ],
     },
