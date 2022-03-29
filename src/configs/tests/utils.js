@@ -3,6 +3,10 @@ const path = require("path");
 
 const getFilePath = (dirname) => path.resolve(dirname, "index.js");
 
+/**
+ *
+ * @param {string} dirname Should pass __dirname in from test directory adjacent to config file
+ */
 const generateTest = (dirname) => {
   test("serializes to a snapshot", () => {
     const path = getFilePath(dirname);
