@@ -1,4 +1,4 @@
-const { recommended } = require(".");
+const recommended = require(".");
 const { generateTest } = require("../tests/utils");
 
 describe("eslint-plugin-curology", () => {

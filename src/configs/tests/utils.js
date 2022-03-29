@@ -1,39 +1,24 @@
 const { execSync } = require("child_process");
 const path = require("path");
-const fs = require("fs");
-const { isJson } = require("../utils");
 
-const getFilePath = (dirname) => (file) => path.resolve(dirname, file);
+const getFilePath = (dirname) => path.resolve(dirname, "index.js");
 
-const generateTest = (dirname, config) => {
+const generateTest = (dirname) => {
   test("serializes to a snapshot", () => {
-    const baseJson = JSON.stringify(config);
-    const setPath = getFilePath(dirname);
-
-    fs.writeFileSync(setPath("fixture.json"), baseJson, {
-      flag: "w",
-    });
+    const path = getFilePath(dirname);
 
     const eslintConfig = execSync(
-      `yarn run eslint --no-eslintrc -c ${setPath(
-        "fixture.json"
-      )} --print-config ${setPath("index.js")}`,
-      {
-        encoding: "utf8",
-      }
+      `yarn run eslint --no-eslintrc -c ${path} --print-config ${path}`,
+      { encoding: "utf8" }
     );
 
     const configJson = JSON.parse(
       eslintConfig.substring(eslintConfig.indexOf("{"))
     );
 
-    if (!isJson(configJson)) {
-      throw new Error("parse error");
-    }
-
     /**
-     * We don't care about the parser option; the TypeScript
-     * config will also fail in CI due to directory path
+     * Parser points to `node_modules` path which depends on which
+     * machine is running this suite, so local/CI is different
      */
     const { parser, ...otherConfigOptions } = configJson;
 

@@ -60,6 +60,4 @@ const recommended = {
   },
 };
 
-module.exports = {
-  recommended,
-};
+module.exports = recommended;
