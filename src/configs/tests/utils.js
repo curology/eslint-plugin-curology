@@ -4,6 +4,8 @@ const path = require("path");
 const getFilePath = (dirname) => path.resolve(dirname, "index.js");
 
 /**
+ * `generateTest` is a convenience method that captures the eslint configuration as a snapshot,
+ * that way when we update dependencies + settings we can clearly see what changes are taking effect.
  *
  * @param {string} dirname Should pass __dirname in from test directory adjacent to config file
  */
