@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/PocketDerm/eslint-plugin-curology",
   "engines": {
-    "node": "16.x"
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
   },
   "main": "index.js",
   "peerDependencies": {
