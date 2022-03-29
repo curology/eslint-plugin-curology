@@ -72,4 +72,4 @@ typings/
 # Serverless directories
 .serverless
 
-./src/**/fixture.json
+src/**/fixture.json
