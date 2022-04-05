@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Fix source import paths from main `index.js` export
+
 ## 1.0.1
 
 - Add `plugin:curology/cypress`
