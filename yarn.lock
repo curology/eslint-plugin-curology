@@ -1556,6 +1556,10 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
+"eslint-plugin-curology@https://github.com/curology/eslint-plugin-curology.git#master":
+  version "1.0.1"
+  resolved "https://github.com/curology/eslint-plugin-curology.git#8ae97ff7866b2999afb649e94f5a10e0d1a8d2fe"
+
 eslint-plugin-cypress@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.12.1.tgz#9aeee700708ca8c058e00cdafe215199918c2632"
