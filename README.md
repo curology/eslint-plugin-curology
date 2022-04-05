@@ -22,7 +22,7 @@ To enable this configuration use the `extends` property in your `.eslintrc` conf
 
 `"plugin:curology/recommended"` must be the last entry in "extends" for best [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier/blob/1f206661b8e197e6753b772509028c34f954b42a/README.md#recommended-configuration) compatibility.
 
-There is also a `"plugin:curology/recommended"` for Cypress rules and configuration.
+There is also a `"plugin:curology/cypress"` for Cypress rules and configuration.
 
 ### Usage (Plugin)
 
