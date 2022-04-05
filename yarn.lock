@@ -1556,6 +1556,11 @@ eslint-module-utils@^2.7.2:
     debug "^3.2.7"
     find-up "^2.1.0"
 
+eslint-plugin-curology@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-curology/-/eslint-plugin-curology-1.0.2.tgz#a1b93dabfea2d5701f8cae7749bc59195cba1e2d"
+  integrity sha512-k/f2ZND5d5Ja6fU1bmsAnFANwzKnBKiaI24DsmFoMh2tBCY90LdxipS2a5aQ8iS0hcdKXYfCgGG+X8hYIah63Q==
+
 eslint-plugin-cypress@^2.12.1:
   version "2.12.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-cypress/-/eslint-plugin-cypress-2.12.1.tgz#9aeee700708ca8c058e00cdafe215199918c2632"
