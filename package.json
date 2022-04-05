@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-curology",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "ESLint Plugin and Configuration for Curology",
   "author": "Curology <engineering@curology.com>",
   "keywords": [
