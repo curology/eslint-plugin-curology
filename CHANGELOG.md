@@ -1,5 +1,9 @@
 # Changelog
 
+# 1.0.4
+
+- [Dependencies] Add back `eslint-config-prettier` (required by `eslint-plugin-prettier`) 
+
 # 1.0.3
 
 - [Dependencies] Remove unused `peerDependencies` (`eslint-config-prettier`, `eslint-plugin-promise`, `eslint-plugin-sonjars`)
