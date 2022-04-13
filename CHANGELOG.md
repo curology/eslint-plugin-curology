@@ -1,5 +1,9 @@
 # Changelog
 
+# 1.0.3
+
+- [Dependencies] Remove unused `peerDependencies` (`eslint-config-prettier`, `eslint-plugin-promise`, `eslint-plugin-sonjars`)
+
 ## 1.0.2
 
 - Fix source import paths from main `index.js` export
