@@ -38,7 +38,7 @@ module.exports = {
 
     function isRestrictedPath(importSource) {
       let result = false;
-      restrictedPaths?.forEach((path) => {
+      restrictedPaths.forEach((path) => {
         if (importSource === path) result = true;
       });
 
