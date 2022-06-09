@@ -1,5 +1,9 @@
 # Changelog
 
+# 1.0.5
+
+- Add `prefer-named-import` rule
+
 # 1.0.4
 
 - [Dependencies] Add back `eslint-config-prettier` (required by `eslint-plugin-prettier`) 
