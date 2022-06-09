@@ -47,3 +47,4 @@ Then configure the rules you want to use under the rules section.
 ## Supported Rules
 
 - [`no-single-letter-variable`](docs/rules/no-single-letter-variable.md): prevent a single letter variable declaration (included in `recommended` config)
+- [`prefer-named-import`](docs/rules/prefer-named-import.md): prefer named imports
