@@ -68,5 +68,9 @@
   "scripts": {
     "test": "yarn run jest src",
     "prepare": "husky install"
+  },
+  "volta": {
+    "node": "16.20.0",
+    "yarn": "1.22.19"
   }
 }
